@@ -100,8 +100,8 @@ export default function Navbar() {
         </div>
 
         <div
-          className={`transition-all duration-300 ease-in-out overflow-hidden ${
-            isOpen ? "max-h-dvh" : "max-h-0"
+          className={`transition-all duration-300 ease-in-out overflow-hidden   border-gray-200 rounded-sm ${
+            isOpen ? "max-h-dvh border-b-[0.1px]" : "max-h-0"
           }`}>
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link href="/" legacyBehavior passHref>
