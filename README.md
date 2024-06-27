@@ -35,24 +35,20 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-
 ## Install Prettier Dependencies
 
-``` bash
+```bash
 npm install --save-dev eslint-config-prettier
 ```
 
-
 ## Format all files with Prettier
 
-``` bash
+```bash
 npx prettier . --write
 ```
 
 ## Install Redux Toolkit
 
-``` bash
+```bash
 npm install --save @reduxjs/toolkit
 ```
-
-

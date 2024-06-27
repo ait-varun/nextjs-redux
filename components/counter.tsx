@@ -35,17 +35,20 @@ export default function Counter() {
         <div className="flex space-x-4">
           <button
             onClick={handleIncrement}
-            className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
+            className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
+          >
             Increment
           </button>
           <button
             onClick={handleDecrement}
-            className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
+            className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"
+          >
             Decrement
           </button>
           <button
             onClick={() => handleIncrementByAmount(2)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+          >
             Increment by 2
           </button>
         </div>
