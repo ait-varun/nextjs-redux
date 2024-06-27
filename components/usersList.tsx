@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function UsersList() {
-  const [skip, setSkip] = useState(0);
+  const [skip, setSkip] = useState<number>(0);
   const [combinedUsers, setCombinedUsers] = useState<User[]>([]);
 
   const { data, isLoading, isError } = useGetUsersQuery({ skip });
@@ -19,7 +19,7 @@ export default function UsersList() {
   }, [data]);
 
   const loadMore = () => {
-    setSkip(skip + 10);
+    setSkip(combinedUsers.length);
     if (data) {
       setCombinedUsers((prevUsers) => [
         ...prevUsers,
@@ -71,11 +71,7 @@ export default function UsersList() {
           </li>
         ))}
       </ul>
-      {isLoading ? (
-        <div className="flex justify-center items-center my-4">
-          <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-900"></div>
-        </div>
-      ) : (
+      {!isLoading && (
         <button
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-4"
           onClick={loadMore}>
