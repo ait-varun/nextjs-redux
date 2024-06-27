@@ -40,11 +40,12 @@ export default function Page({ params }: { params: { id: number } }) {
             {user.firstName} {user.lastName}
           </h2>
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 min-[630px]:grid-cols-2 gap-4">
           <div>
-            <p className="text-gray-600">
+            <p className="text-gray-600 break-words">
               <span className="font-semibold">Email:</span> {user.email}
             </p>
+
             <p className="text-gray-600">
               <span className="font-semibold">Phone:</span> {user.phone}
             </p>
