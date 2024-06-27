@@ -14,7 +14,7 @@ import {
 
 export default function Navbar() {
   return (
-    <NavigationMenu className="mx-auto max-w-screen-sm">
+    <NavigationMenu className="mx-auto max-w-screen-sm hidden lg:block">
       <NavigationMenuList>
         <NavigationMenuItem>
           <Link href="/" legacyBehavior passHref>
