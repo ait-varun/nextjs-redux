@@ -65,7 +65,8 @@ export default function UsersList() {
     );
 
   return (
-    <div className="container mx-auto py-8">
+    <>
+      {" "}
       <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ">
         {combinedUsers.map((user, index) => (
           <li
@@ -94,7 +95,6 @@ export default function UsersList() {
           </li>
         ))}
       </ul>
-
       <div ref={scrollRef} className="grid place-items-center">
         {!isLoading && (
           <button
@@ -104,6 +104,6 @@ export default function UsersList() {
           </button>
         )}
       </div>
-    </div>
+    </>
   );
 }
