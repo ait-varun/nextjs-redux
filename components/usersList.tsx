@@ -91,9 +91,9 @@ export default function UsersList() {
                   className="w-full h-48 object-contain"
                 />
                 <div className="mt-2">
-                  <h3 className="text-lg font-semibold">
+                  <h1 className="text-lg font-semibold">
                     {user.firstName} {user.lastName}
-                  </h3>
+                  </h1>
                   <p className="text-gray-600">{user.email}</p>
                   <p className="text-gray-600">{user.phone}</p>
                   <p className="text-gray-600">Age: {user.age}</p>
