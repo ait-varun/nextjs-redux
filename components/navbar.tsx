@@ -75,7 +75,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Navigation */}
-      <nav className="sticky top-0 left-0 right-0 z-50 lg:hidden bg-white">
+      <nav className="fixed top-0 left-0 right-0 z-50 lg:hidden bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
@@ -101,7 +101,7 @@ export default function Navbar() {
 
         <div
           className={`transition-all duration-300 ease-in-out overflow-hidden ${
-            isOpen ? "max-h-[1000px]" : "max-h-0"
+            isOpen ? "min-h-dvh" : "max-h-0"
           }`}>
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link href="/" legacyBehavior passHref>
