@@ -98,9 +98,10 @@ export default function UsersList() {
       <div ref={scrollRef} className="grid place-items-center">
         {!isLoading && (
           <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-4 "
+            className="grid grid-cols-[1fr,auto] items-center gap-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-4"
             onClick={loadMore}>
-            Load More
+            <span>Load More</span>
+            <div className="animate-spin rounded-full h-4 w-4 border-t-2 border-b-2 border-white"></div>
           </button>
         )}
       </div>
