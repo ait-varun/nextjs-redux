@@ -99,7 +99,10 @@ export default function Navbar() {
           </div>
         </div>
 
-        <div className={`${isOpen ? "block" : "hidden"}`}>
+        <div
+          className={`transition-all duration-300 ease-in-out overflow-hidden ${
+            isOpen ? "max-h-[1000px]" : "max-h-0"
+          }`}>
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link href="/" legacyBehavior passHref>
               <span
