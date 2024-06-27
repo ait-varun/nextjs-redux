@@ -51,12 +51,12 @@ export default function UsersList() {
     }
   }, [scrollRef, loadMore, isInitialDataLoaded]);
 
-  // if (isLoading)
-  //   return (
-  //     <div className="flex justify-center items-center h-screen">
-  //       <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-gray-900"></div>
-  //     </div>
-  //   );
+  if (isLoading)
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-gray-900"></div>
+      </div>
+    );
   if (isError)
     return (
       <div className="flex justify-center items-center h-screen text-red-500">
@@ -77,8 +77,8 @@ export default function UsersList() {
                 <Image
                   src={user.image}
                   alt={`${user.firstName} ${user.lastName}`}
-                  width={480}
-                  height={480}
+                  width={640}
+                  height={360}
                   className="w-full h-48 object-cover"
                 />
                 <div className="mt-2">

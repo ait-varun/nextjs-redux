@@ -28,8 +28,12 @@ export default function Page({ params }: { params: { id: number } }) {
           <Image
             src={user.image}
             alt={`${user.firstName} ${user.lastName}`}
-            width={480}
-            height={480}
+            sizes="(min-width: 808px) 25vw, 100vw"
+            style={{
+              objectFit: "contain", // cover, contain, none
+            }}
+            width={640}
+            height={360}
             className="w-16 h-16 rounded-full mr-4"
           />
           <h2 className="text-2xl font-bold">
