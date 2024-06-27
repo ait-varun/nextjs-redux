@@ -88,7 +88,7 @@ export default function UsersList() {
                   sizes="(min-width: 808px) 25vw, 100vw"
                   width={640}
                   height={360}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-48 object-contain"
                 />
                 <div className="mt-2">
                   <h3 className="text-lg font-semibold">
