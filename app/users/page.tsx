@@ -1,4 +1,4 @@
-import UsersList from "@/components/usersLisr";
+import UsersList from "@/components/usersList";
 
 export default function Page() {
   return (
