@@ -68,7 +68,7 @@ export default function Navbar() {
         </NavigationMenu>
         <div className="grid place-content-end me-6 my-2">
           <Avatar>
-            <AvatarImage src="https://github.com/shadcn.png" />
+            <AvatarImage src="https://github.com/shadcn.png" alt="avatar" />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
         </div>

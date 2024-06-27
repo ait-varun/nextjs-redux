@@ -104,14 +104,9 @@ export default function UsersList() {
           </li>
         ))}
       </ul>
-      <div ref={scrollRef} className="grid place-items-center">
+      <div ref={scrollRef} className="grid place-items-center mt-4">
         {!isLoading && combinedUsers.length !== data?.total && (
-          <button
-            className="grid grid-cols-[1fr,auto] items-center gap-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-4"
-            onClick={loadMore}>
-            <span>Load More</span>
-            <div className="animate-spin rounded-full h-4 w-4 border-t-2 border-b-2 border-white"></div>
-          </button>
+          <div className="animate-spin rounded-full h-4 w-4 border-t-2 border-b-2 border-blue-600"></div>
         )}
       </div>
     </>
