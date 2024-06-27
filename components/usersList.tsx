@@ -1,11 +1,32 @@
 "use client";
 
 import { useGetUsersQuery } from "@/redux/features/usersSlice";
+import { User } from "@/types/users";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function UsersList() {
-  const { data, isLoading, isError } = useGetUsersQuery();
+  const [skip, setSkip] = useState(0);
+  const [combinedUsers, setCombinedUsers] = useState<User[]>([]);
+
+  const { data, isLoading, isError } = useGetUsersQuery({ skip });
+
+  useEffect(() => {
+    if (data) {
+      setCombinedUsers(data.users as User[]);
+    }
+  }, [data]);
+
+  const loadMore = () => {
+    setSkip(skip + 10);
+    if (data) {
+      setCombinedUsers((prevUsers) => [
+        ...prevUsers,
+        ...(data.users as User[]),
+      ]);
+    }
+  };
 
   if (isLoading)
     return (
@@ -23,10 +44,10 @@ export default function UsersList() {
   return (
     <div className="container mx-auto py-8">
       <div className="mb-4 text-lg font-semibold">
-        Total Users: {data?.total}
+        Total Users: {data?.limit}
       </div>
       <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ">
-        {data?.users.map((user) => (
+        {combinedUsers.map((user) => (
           <li
             key={user.id}
             className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
@@ -53,6 +74,17 @@ export default function UsersList() {
           </li>
         ))}
       </ul>
+      {isLoading ? (
+        <div className="flex justify-center items-center my-4">
+          <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-900"></div>
+        </div>
+      ) : (
+        <button
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-4"
+          onClick={loadMore}>
+          Load More
+        </button>
+      )}
     </div>
   );
 }
