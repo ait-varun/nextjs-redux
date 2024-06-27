@@ -5,6 +5,7 @@ import { User } from "@/types/users";
 import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
+import ImagesSkeleton from "./images-skelton";
 
 export default function UsersList() {
   const [skip, setSkip] = useState<number>(0);
@@ -53,9 +54,16 @@ export default function UsersList() {
 
   if (isLoading)
     return (
-      <div className="flex justify-center items-center h-screen">
-        <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-gray-900"></div>
-      </div>
+      <>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ">
+          {" "}
+          {Array(12)
+            .fill(0)
+            .map((_, index) => (
+              <ImagesSkeleton key={index} />
+            ))}
+        </div>
+      </>
     );
   if (isError)
     return (
@@ -77,6 +85,7 @@ export default function UsersList() {
                 <Image
                   src={user.image}
                   alt={`${user.firstName} ${user.lastName}`}
+                  sizes="(min-width: 808px) 25vw, 100vw"
                   width={640}
                   height={360}
                   className="w-full h-48 object-cover"
