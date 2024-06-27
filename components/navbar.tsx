@@ -102,13 +102,17 @@ export default function Navbar() {
         <div className={`${isOpen ? "block" : "hidden"}`}>
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link href="/" legacyBehavior passHref>
-              <span className="text-gray-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+              <span
+                className="text-gray-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                onClick={toggleMenu}>
                 <Home className="mr-2 h-4 w-4 inline" />
                 Home
               </span>
             </Link>
             <Link href="/users" legacyBehavior passHref>
-              <span className="text-gray-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+              <span
+                className="text-gray-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                onClick={toggleMenu}>
                 <Users className="mr-2 h-4 w-4 inline" />
                 Users
               </span>
@@ -128,17 +132,32 @@ export default function Navbar() {
               {isDropdownOpen && (
                 <div className="pl-4">
                   <Link href="/dropdown" legacyBehavior passHref>
-                    <span className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    <span
+                      className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                      onClick={() => {
+                        toggleMenu();
+                        toggleDropdown();
+                      }}>
                       Dropdown Item 1
                     </span>
                   </Link>
                   <Link href="/dropdown" legacyBehavior passHref>
-                    <span className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    <span
+                      className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                      onClick={() => {
+                        toggleMenu();
+                        toggleDropdown();
+                      }}>
                       Dropdown Item 2
                     </span>
                   </Link>
                   <Link href="/dropdown" legacyBehavior passHref>
-                    <span className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    <span
+                      className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                      onClick={() => {
+                        toggleMenu();
+                        toggleDropdown();
+                      }}>
                       Dropdown Item 3
                     </span>
                   </Link>
