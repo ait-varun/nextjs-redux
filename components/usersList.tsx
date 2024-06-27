@@ -85,7 +85,7 @@ export default function UsersList() {
                 <Image
                   src={user.image}
                   alt={`${user.firstName} ${user.lastName}`}
-                  // sizes="(min-width: 808px) 25vw, 100vw"
+                  sizes="(min-width: 808px) 25vw, 100vw"
                   width={640}
                   height={360}
                   className="w-full h-48 object-contain"
