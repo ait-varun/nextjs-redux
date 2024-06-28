@@ -7,7 +7,7 @@ export default function Page() {
     <>
       <div className="container mx-auto  py-8">
         <h1 className="text-3xl font-bold mx-4">Users</h1>
-        <div className="mx-4">
+        <div className="mx-4 my-4">
           {" "}
           <Suspense fallback={<Loading />}>
             <UsersList />
